@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    tools:context=".ui.details.DetailsFragment">
+
+    <TextView
+        android:id="@+id/dog_detail_name_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:textStyle="bold"
+        android:text="@string/detail_fragment_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_group"
+        app:layout_constraintEnd_toStartOf="@+id/dog_detail_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dog_detail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_detail_name_legend" />
+
+    <TextView
+        android:id="@+id/dog_detail_group_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:text="@string/detail_fragment_group"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_name"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_origin"
+        app:layout_constraintEnd_toStartOf="@+id/dog_detail_group"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/dog_detail_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_name"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_detail_group_legend" />
+
+    <TextView
+        android:id="@+id/dog_detail_origin_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:text="@string/detail_fragment_origin"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_group"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_temperment"
+        app:layout_constraintEnd_toStartOf="@+id/dog_detail_origin"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/dog_detail_origin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_group"
+        app:layout_constraintBottom_toTopOf="@+id/dog_detail_temperment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_detail_origin_legend" />
+
+    <TextView
+        android:id="@+id/dog_detail_temperment_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:text="@string/detail_fragment_temperament"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_origin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dog_detail_temperment"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/dog_detail_temperment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textSize="@dimen/fragment_detail_text"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toBottomOf="@+id/dog_detail_origin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_detail_temperment_legend"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
