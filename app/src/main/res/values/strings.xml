@@ -3,6 +3,13 @@
     <string name="title_home">Dogs</string>
     <string name="title_search">Search</string>
     <string name="title_details">Details</string>
+
     <string name="switch_listgrid_text">List/Grid</string>
     <string name="switch_alphaorder_text">Order by Name/Group</string>
+
+    <string name="detail_fragment_name">Name:</string>
+    <string name="detail_fragment_group">Group:</string>
+    <string name="detail_fragment_origin">Origin:</string>
+    <string name="detail_fragment_temperament">Temperament:</string>
+    <string name="detail_fragment_no_data">No Data</string>
 </resources>

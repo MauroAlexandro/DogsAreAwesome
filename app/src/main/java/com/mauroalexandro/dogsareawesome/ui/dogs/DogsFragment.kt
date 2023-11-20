@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ import com.mauroalexandro.dogsareawesome.databinding.FragmentDogsBinding
 import com.mauroalexandro.dogsareawesome.models.Breed
 import com.mauroalexandro.dogsareawesome.models.BreedImage
 import com.mauroalexandro.dogsareawesome.network.Status
+import com.mauroalexandro.dogsareawesome.ui.details.DetailsFragment
 
 
 class DogsFragment : Fragment() {
@@ -90,9 +92,7 @@ class DogsFragment : Fragment() {
                         binding.dogbreedsRecyclerview.findChildViewUnder(e.x, e.y)?.let {
                             val position = recyclerView.getChildAdapterPosition(it)
                             val breedClicked = (recyclerView.adapter as DogBreedsRecyclerViewAdapter).getItemAtPosition(position)
-                            val breedImage = breedsImages.find { it.id == breedClicked.reference_image_id }
-                            Toast.makeText(recyclerView.context, "clicked on ${breedImage?.breeds?.get(0)?.name}", Toast.LENGTH_SHORT)
-                                .show()
+                            activity?.let { fragmentActivity -> openDetailsFragment(fragmentActivity, breedClicked) }
                         }
                     }
                     else -> downTouch = false
@@ -102,6 +102,18 @@ class DogsFragment : Fragment() {
         })
 
         return root
+    }
+
+    /**
+     * Show DetailsFragment
+     */
+    fun openDetailsFragment(activity: FragmentActivity, breed: Breed) {
+        val collectionDetailFragment = DetailsFragment(breed)
+        if(!activity.supportFragmentManager.isDestroyed)
+            collectionDetailFragment.show(
+                activity.supportFragmentManager,
+                "breed_detail_dialog_fragment"
+            )
     }
 
     override fun onAttach(context: Context) {
