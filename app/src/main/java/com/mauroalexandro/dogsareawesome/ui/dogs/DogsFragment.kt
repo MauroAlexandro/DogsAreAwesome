@@ -119,6 +119,9 @@ class DogsFragment : Fragment() {
                 when (it.status) {
                     Status.SUCCESS -> {
                         binding.dogbreedsProgressBar.visibility = View.GONE
+                        binding.dogbreedsNoData.visibility = View.GONE
+                        binding.dogbreedsListGridSwitch.visibility = View.VISIBLE
+                        binding.dogbreedsAlphaSwitch.visibility = View.VISIBLE
 
                         it.data?.let { breeds ->
                             if(breeds.isNotEmpty()) {
@@ -148,6 +151,7 @@ class DogsFragment : Fragment() {
 
                     Status.ERROR -> {
                         binding.dogbreedsProgressBar.visibility = View.GONE
+                        binding.dogbreedsNoData.visibility = View.VISIBLE
                         Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
                     }
                 }
