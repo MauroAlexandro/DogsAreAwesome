@@ -46,11 +46,14 @@ class Utils {
      */
     fun getList(): List<Breed> {
         var breedList: List<Breed> = ArrayList()
-        val serializedObject: String? = sharedPreferences.getString(breedListKey, "")
-        if (serializedObject != null) {
-            val gson = Gson()
-            val type: Type = object : TypeToken<List<Breed?>?>() {}.type
-            breedList = gson.fromJson(serializedObject, type)
+
+        if(this::sharedPreferences.isInitialized) {
+            val serializedObject: String? = sharedPreferences.getString(breedListKey, "")
+            if (serializedObject != null) {
+                val gson = Gson()
+                val type: Type = object : TypeToken<List<Breed?>?>() {}.type
+                breedList = gson.fromJson(serializedObject, type)
+            }
         }
 
         return breedList
