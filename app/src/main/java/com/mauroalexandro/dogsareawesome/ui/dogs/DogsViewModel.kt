@@ -1,7 +1,6 @@
 package com.mauroalexandro.dogsareawesome.ui.dogs
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mauroalexandro.dogsareawesome.models.Breed

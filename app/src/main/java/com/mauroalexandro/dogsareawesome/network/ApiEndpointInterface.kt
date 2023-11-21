@@ -10,10 +10,6 @@ interface ApiEndpointInterface {
     @GET("breeds/")
     fun getBreeds(): Call<ArrayList<Breed>>
 
-    @GET("breeds/{id}")
-    fun getBreedByID(@Path(value = "id", encoded = true) id: String): Call<Breed>
-
     @GET("images/{id}")
     fun getBreedImageByID(@Path(value = "id", encoded = true) id: String): Call<BreedImage>
-
 }
