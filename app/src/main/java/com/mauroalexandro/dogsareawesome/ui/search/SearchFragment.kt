@@ -28,7 +28,7 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val breedList = utils.getList()
+        val breedList = utils.getList(utils.breedListKey)
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

@@ -35,7 +35,7 @@ class Utils {
         set(key, json, context)
     }
     private operator fun set(key: String?, value: String?, context: Context) {
-        sharedPreferences = context.getSharedPreferences(breedListKey, Context.MODE_PRIVATE)
+        sharedPreferences = context.getSharedPreferences(key, Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
         editor.putString(key, value)
         editor.commit()
@@ -44,11 +44,11 @@ class Utils {
     /**
      * Retrieve Breed List from JSON in SharedPreferences, into Arraylist
      */
-    fun getList(): List<Breed> {
+    fun getList(key: String?): List<Breed> {
         var breedList: List<Breed> = ArrayList()
 
         if(this::sharedPreferences.isInitialized) {
-            val serializedObject: String? = sharedPreferences.getString(breedListKey, "")
+            val serializedObject: String? = sharedPreferences.getString(key, "")
             if (serializedObject != null) {
                 val gson = Gson()
                 val type: Type = object : TypeToken<List<Breed?>?>() {}.type
