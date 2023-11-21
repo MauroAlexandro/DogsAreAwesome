@@ -20,6 +20,7 @@ import com.mauroalexandro.dogsareawesome.models.Breed
 import com.mauroalexandro.dogsareawesome.models.BreedImage
 import com.mauroalexandro.dogsareawesome.network.Status
 import com.mauroalexandro.dogsareawesome.ui.details.DetailsFragment
+import com.mauroalexandro.dogsareawesome.utils.Utils
 
 
 class DogsFragment : Fragment() {
@@ -37,6 +38,7 @@ class DogsFragment : Fragment() {
     private var firstElement = 0
     private var lastElement = 10
     private var listSize = 0
+    private var utils: Utils = Utils.getInstance()
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
@@ -92,7 +94,7 @@ class DogsFragment : Fragment() {
                         binding.dogbreedsRecyclerview.findChildViewUnder(e.x, e.y)?.let {
                             val position = recyclerView.getChildAdapterPosition(it)
                             val breedClicked = (recyclerView.adapter as DogBreedsRecyclerViewAdapter).getItemAtPosition(position)
-                            activity?.let { fragmentActivity -> openDetailsFragment(fragmentActivity, breedClicked) }
+                            activity?.let { fragmentActivity -> utils.openDetailsFragment(fragmentActivity, breedClicked) }
                         }
                     }
                     else -> downTouch = false
@@ -102,18 +104,6 @@ class DogsFragment : Fragment() {
         })
 
         return root
-    }
-
-    /**
-     * Show DetailsFragment
-     */
-    fun openDetailsFragment(activity: FragmentActivity, breed: Breed) {
-        val collectionDetailFragment = DetailsFragment(breed)
-        if(!activity.supportFragmentManager.isDestroyed)
-            collectionDetailFragment.show(
-                activity.supportFragmentManager,
-                "breed_detail_dialog_fragment"
-            )
     }
 
     override fun onAttach(context: Context) {
@@ -136,6 +126,7 @@ class DogsFragment : Fragment() {
                                 listSize = this.breeds.size
                                 lastElement = listSize - 1
                                 updateAdapter()
+                                utils.setList(utils.breedListKey,breeds,requireContext())
 
                                 //Calls Breed Images Service
                                 dogsViewModel.getImagesOfReceivedBreeds(breeds)
