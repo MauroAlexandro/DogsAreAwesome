@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +18,7 @@ import com.mauroalexandro.dogsareawesome.databinding.FragmentDogsBinding
 import com.mauroalexandro.dogsareawesome.models.Breed
 import com.mauroalexandro.dogsareawesome.models.BreedImage
 import com.mauroalexandro.dogsareawesome.network.Status
-import com.mauroalexandro.dogsareawesome.ui.details.DetailsFragment
 import com.mauroalexandro.dogsareawesome.utils.Utils
-
 
 class DogsFragment : Fragment() {
 
