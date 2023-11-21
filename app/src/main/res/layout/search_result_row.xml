@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/cell_shape">
+
+    <TextView
+        android:id="@+id/dog_search_name_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:textStyle="bold"
+        android:text="@string/detail_fragment_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dog_search_group"
+        app:layout_constraintEnd_toStartOf="@+id/dog_search_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dog_search_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:textStyle="bold"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dog_search_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_search_name_legend" />
+
+    <TextView
+        android:id="@+id/dog_search_group_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:text="@string/detail_fragment_group"
+        app:layout_constraintTop_toBottomOf="@+id/dog_search_name"
+        app:layout_constraintBottom_toTopOf="@+id/dog_search_origin"
+        app:layout_constraintEnd_toStartOf="@+id/dog_search_group"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/dog_search_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toBottomOf="@+id/dog_search_name"
+        app:layout_constraintBottom_toTopOf="@+id/dog_search_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_search_group_legend" />
+
+    <TextView
+        android:id="@+id/dog_search_origin_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_legend"
+        android:text="@string/detail_fragment_origin"
+        app:layout_constraintTop_toBottomOf="@+id/dog_search_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dog_search_origin"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/dog_search_origin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/fragment_detail_text"
+        android:text="@string/detail_fragment_no_data"
+        app:layout_constraintTop_toBottomOf="@+id/dog_search_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dog_search_origin_legend" />
+</androidx.constraintlayout.widget.ConstraintLayout>
